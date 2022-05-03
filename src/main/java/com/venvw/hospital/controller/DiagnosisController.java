@@ -5,6 +5,7 @@ import com.venvw.hospital.model.Diagnosis;
 import com.venvw.hospital.model.DiagnosisPeople;
 import com.venvw.hospital.model.People;
 import com.venvw.hospital.service.DiagnosisService;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -19,6 +20,7 @@ public class DiagnosisController {
         this.diagnosisService = diagnosisService;
     }
 
+    @PreAuthorize("hasAuthority('edit')")
     @PostMapping
     public Diagnosis createDiagnosis(@Valid @RequestBody CreateUpdateDiagnosisDto dto) {
         Diagnosis diagnosis = new Diagnosis(dto.getName());
@@ -27,16 +29,19 @@ public class DiagnosisController {
         return diagnosis;
     }
 
+    @PreAuthorize("permitAll()")
     @GetMapping("/{id}")
     public Diagnosis readDiagnosisById(@PathVariable Integer id) {
         return diagnosisService.readDiagnosisById(id);
     }
 
+    @PreAuthorize("permitAll()")
     @GetMapping
     public List<Diagnosis> readDiagnosis() {
         return diagnosisService.readDiagnosis();
     }
 
+    @PreAuthorize("hasAuthority('edit')")
     @PatchMapping("/{id}")
     public Diagnosis updateDiagnosis(@PathVariable Integer id, @Valid @RequestBody CreateUpdateDiagnosisDto dto) {
         Diagnosis diagnosis = new Diagnosis(id, dto.getName());
@@ -46,11 +51,13 @@ public class DiagnosisController {
         return diagnosis;
     }
 
+    @PreAuthorize("hasAuthority('edit')")
     @DeleteMapping("/{id}")
     public void deleteDiagnosis(@PathVariable Integer id) {
         diagnosisService.deleteDiagnosis(id);
     }
 
+    @PreAuthorize("permitAll()")
     @GetMapping("/{id}/people")
     public List<People> readPeopleWithDiagnosis(@PathVariable Integer id) {
         return diagnosisService.readPeople(id);
