@@ -1,0 +1,1 @@
+export { DeleteWardButton } from './ui';

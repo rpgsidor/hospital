@@ -1,0 +1,47 @@
+{
+  "name": "@gsdc-nsk/react",
+  "version": "0.0.0",
+  "author": "evist0",
+  "private": true,
+  "license": "UNLICENSED",
+  "scripts": {
+    "start": "vite",
+    "build": "tsc && vite build",
+    "lint": "eslint src --ext .ts,.tsx"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.9.0",
+    "@emotion/styled": "^11.8.1",
+    "@hookform/resolvers": "^2.8.10",
+    "@mui/icons-material": "^5.8.0",
+    "@mui/material": "^5.6.4",
+    "axios": "^0.27.2",
+    "axios-hooks": "^3.0.3",
+    "compose-function": "^3.0.3",
+    "react": "^18.0.0",
+    "react-dnd": "^16.0.1",
+    "react-dnd-html5-backend": "^16.0.1",
+    "react-dom": "^18.0.0",
+    "react-hook-form": "^7.31.1",
+    "react-router-dom": "6",
+    "yup": "^0.32.11"
+  },
+  "devDependencies": {
+    "@types/compose-function": "^0.0.30",
+    "@types/react": "^18.0.0",
+    "@types/react-dom": "^18.0.0",
+    "@typescript-eslint/eslint-plugin": "^5.22.0",
+    "@typescript-eslint/parser": "^5.22.0",
+    "@vitejs/plugin-react": "^1.3.0",
+    "eslint": "^8.14.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-import-resolver-typescript": "^2.7.1",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.29.4",
+    "prettier": "^2.6.2",
+    "typescript": "^4.6.3",
+    "vite": "^2.9.7",
+    "vite-tsconfig-paths": "^3.4.1"
+  }
+}
